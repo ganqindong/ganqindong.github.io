@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 170" role="img" aria-labelledby="title desc">
+<title id="title">RGB-thermal segmentation method schematic</title>
+<desc id="desc">RGB and thermal inputs feed an adapted DFormerV2 model for semantic segmentation. This is a method diagram, not an experimental output.</desc>
+<g font-family="Arial,sans-serif" text-anchor="middle" fill="#26292b">
+<g stroke="#88959f" fill="none" stroke-width="1.2"><rect x="20" y="12" width="82" height="32"/><rect x="138" y="12" width="82" height="32"/><path d="M61 44v15h118V44M120 59v16"/><path d="m116 71 4 4 4-4"/></g>
+<text x="61" y="33" font-size="14">RGB</text><text x="179" y="33" font-size="14">Thermal</text>
+<text x="120" y="96" font-size="17" fill="#2f5d78">DFormerV2</text><text x="120" y="114" font-size="11" fill="#687078">Adapted for RGB-thermal inputs</text>
+<path d="M120 120v17m-4-4 4 4 4-4" fill="none" stroke="#88959f" stroke-width="1.2"/>
+<text x="120" y="157" font-size="13">Semantic segmentation</text>
+</g></svg>

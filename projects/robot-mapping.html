@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A University of Cincinnati capstone extending hippocampus-inspired robot navigation with visual features and LiDAR fusion, illustrated with archived Webots inputs and place-cell results.">
+<title>Bio-inspired Mapping and Navigation for Robots | Qindong Gan's Website</title>
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Bio-inspired Mapping and Navigation for Robots | Qindong Gan's Website">
+<meta property="og:description" content="A University of Cincinnati capstone extending hippocampus-inspired robot navigation with visual features and LiDAR fusion, illustrated with archived Webots inputs and place-cell results.">
+<meta property="og:url" content="https://ganqindong.github.io/projects/robot-mapping.html">
+<meta property="og:image" content="https://ganqindong.github.io/assets/projects/robot-cross-arena.png">
+<meta property="og:image:alt" content="Webots arena used in the robot mapping capstone">
+<meta property="og:image:width" content="800">
+<meta property="og:image:height" content="639">
+<link rel="stylesheet" href="../assets/site.css?v=20261008-polish">
+</head>
+<body>
+<a class="skip-link" href="#project-content">Skip to project</a>
+<div class="page detail-page">
+<nav class="site-nav" aria-label="Main navigation"><a class="home-link" href="../">Qindong Gan</a><div class="nav-links"><a href="../#research">Research</a><a href="../Qindong_Gan_CV.pdf">CV</a></div></nav>
+<main id="project-content">
+<article class="project robot-project" id="robot-project" aria-labelledby="robot-title">
+<header class="project-hero">
+<h1 id="robot-title">Bio-inspired Mapping and Navigation for Robots</h1>
+<p class="authors"><a href="../"><strong>Qindong Gan</strong></a>, Wentao Zhang, and Qiyanhui Lu</p>
+<p class="institutions">University of Cincinnati · Team 47</p>
+<p class="meta">Senior capstone project · 2024–2025<br>Advisor: Prof. <a href="https://researchdirectory.uc.edu/p/minaiaa">Ali Minai</a></p>
+<nav class="project-links" aria-label="Project resources"><a href="../papers/robot-capstone-report.pdf">Technical Report</a><a href="../papers/robot-capstone-slides.pdf">Slides</a><a href="../papers/robot-capstone-poster.pdf">Poster</a><a href="https://doi.org/10.1016/j.neunet.2023.01.010">Model Paper</a></nav>
+</header>
+<div class="visual-grid robot-results project-teaser">
+<figure class="visual"><span class="visual-label">Obstacle-filled arena</span><a href="../assets/projects/robot-cross-arena.png" aria-label="Enlarge the obstacle-filled arena"><img src="../assets/projects/robot-cross-arena.png" alt="Webots arena with colored wall landmarks and a cross-shaped central obstacle." width="800" height="639"></a><figcaption>The central obstacle introduces geometric ambiguity into the mapping task.</figcaption></figure>
+<figure class="visual"><span class="visual-label">Exploration trajectory</span><a href="../assets/projects/robot-exploration-path.png" aria-label="Enlarge the archived exploration trajectory"><img src="../assets/projects/robot-exploration-path.png" alt="Archived vision-enabled exploration trajectory around a cross-shaped obstacle." width="1000" height="1000"></a><figcaption>Archived vision-enabled exploration example from the final capstone report.</figcaption></figure>
+</div>
+<section class="abstract-band" aria-labelledby="abstract"><div class="abstract-inner">
+<h2 id="abstract">Abstract</h2>
+<p>This capstone extended an established hippocampus-inspired navigation framework that uses boundary-vector, head-direction, place-cell, and reward-cell mechanisms to learn spatial representations and support goal-directed navigation.</p>
+<p>I worked on the vision-embedding module, including feature extraction and performance evaluation, and coordinated the team's technical discussions. The system combined pretrained EfficientNetV2 features with LiDAR-derived boundary-vector responses through an autoencoder-based fusion layer.</p>
+</div></section>
+<section class="project-section" aria-labelledby="method">
+<h2 id="method">Method</h2>
+<p class="robot-method">Pretrained EfficientNetV2 produces 1,280 visual features. These are concatenated with 400 boundary-vector responses and min-max normalized. An autoencoder is trained to reconstruct this 1,680-dimensional input through a 400-dimensional bottleneck; only its encoder is used in the navigation pipeline.</p>
+<figure class="visual robot-workflow"><a href="../assets/projects/robot-workflow.svg" aria-label="Enlarge the camera and LiDAR fusion workflow"><picture><source width="430" height="550" media="(max-width: 560px)" srcset="../assets/projects/robot-workflow-mobile.svg"><img src="../assets/projects/robot-workflow.svg" alt="Pretrained EfficientNetV2 extracts 1,280 camera features. These are combined with 400 boundary-vector responses and passed through a trained fusion encoder to supply a 400-dimensional spatial input." width="900" height="320"></picture></a><figcaption>The report describes a 1,680 → 400 → 1,680 autoencoder. Its encoder adds visual appearance to the existing place-cell framework.</figcaption></figure>
+</section>
+<section class="project-section" aria-labelledby="results">
+<h2 id="results">Results</h2>
+
+<h3 class="robot-field-heading">Learned place-cell responses</h3>
+<p class="robot-field-key">Each map shows one cell's response across the arena. Green/yellow regions indicate stronger activity; purple regions indicate weaker activity. White gaps contain no plotted response samples.</p>
+<div class="visual-grid robot-cell-cards">
+<figure class="visual"><span class="visual-label">Cell 41: left-boundary response</span><a class="cell-map cell-41" href="../assets/projects/robot-place-fields.jpg" aria-label="View Cell 41 within the original five-cell response panel"><img src="../assets/projects/robot-place-fields.jpg" loading="lazy" alt="Cell 41 from the archived report, with stronger activation near the left boundary of the arena." width="1430" height="284"></a><figcaption>Stronger activity is concentrated near the left boundary.</figcaption></figure>
+<figure class="visual"><span class="visual-label">Cell 42: lower-arena response</span><a class="cell-map cell-42" href="../assets/projects/robot-place-fields.jpg" aria-label="View Cell 42 within the original five-cell response panel"><img src="../assets/projects/robot-place-fields.jpg" loading="lazy" alt="Cell 42 from the archived report, with stronger activation in the lower part of the arena." width="1430" height="284"></a><figcaption>A different cell responds most strongly in the lower part of the arena.</figcaption></figure>
+</div>
+<p class="robot-outcome"><strong>What I observed.</strong> The evaluation showed local refinements in spatial coding, while perceptual aliasing persisted in symmetric layouts. Adding visual features did not resolve all spatial ambiguity.</p>
+<p class="result-note">Click either map to view the original five-cell panel. The camera replay and response maps come from separate archived examples.</p>
+<h3 id="webots-demo">Webots demonstration and camera replay</h3>
+<div class="visual-grid robot-demos">
+<figure class="visual arena-replay"><span class="visual-label">Textured arena: illustrative traversal</span><img id="arena-replay" src="../assets/projects/robot-arena-traversal-poster.png" data-animation="../assets/projects/robot-arena-traversal.gif" data-poster="../assets/projects/robot-arena-traversal-poster.png" alt="Schematic textured arena with a moving robot, heading arrow, illustrative route, and camera view cone." width="640" height="480"><button class="replay-toggle" id="arena-toggle" data-target="arena-replay" data-name="arena illustration" type="button" aria-controls="arena-replay" aria-pressed="false">Play animation</button><figcaption>Schematic based on the <a href="../assets/projects/robot-webots-scene.png">archived arena image</a>. Robot motion and view cone are illustrative; this is not synchronized with the camera replay.</figcaption><noscript><p class="result-note"><a href="../assets/projects/robot-arena-traversal.gif">View the arena illustration</a></p></noscript></figure>
+<figure class="visual camera-replay"><span class="visual-label">Camera-input replay</span><img id="camera-replay" src="../assets/projects/robot-webots-camera-poster.png" data-animation="../assets/projects/robot-webots-camera.gif" data-poster="../assets/projects/robot-webots-camera-poster.png" alt="Saved Webots camera views showing changes in wall colors, geometric landmarks, and viewpoint." width="224" height="224"><button class="replay-toggle" id="replay-toggle" data-target="camera-replay" data-name="camera replay" type="button" aria-controls="camera-replay" aria-pressed="false">Play animation</button><figcaption>Animation assembled from saved Webots camera frames. Playback timing is selected for display.</figcaption><noscript><p class="result-note"><a href="../assets/projects/robot-webots-camera.gif">View the camera animation</a></p></noscript></figure>
+</div>
+
+<h3 id="additional-views">Camera views and platform context</h3>
+<div class="visual-grid robot-context">
+<figure class="visual"><span class="visual-label">Saved Webots camera views</span><a href="../assets/projects/robot-camera-views.png" aria-label="Enlarge four saved Webots camera views"><img src="../assets/projects/robot-camera-views.png" loading="lazy" alt="Four archived camera views of textured walls and visual landmarks in the Webots room." width="1316" height="775"></a><figcaption>Four camera inputs from the capstone report.</figcaption></figure>
+<figure class="visual robot-video"><span class="visual-label">Earlier physical-robot demonstration</span><video controls muted playsinline preload="none" poster="../assets/projects/robot-platform-poster.webp" width="1280" height="720" aria-label="Earlier 2023–2024 robot-platform demonstration"><source src="../assets/projects/robot-platform-demo.mp4" type="video/mp4">Your browser does not support embedded video. <a href="../assets/projects/robot-platform-demo.mp4">Watch the platform demonstration</a>.</video><figcaption>Platform context from the earlier 2023–2024 UC capstone. My 2024–2025 vision-fusion evaluation was conducted in Webots.</figcaption></figure>
+</div>
+<p class="result-note">These are qualitative exploration and spatial-response examples, without a matched navigation-success comparison. The <a href="../papers/robot-capstone-report.pdf">technical report</a> gives the full analysis. The capstone builds on the spatial-learning model of <a href="https://doi.org/10.1016/j.neunet.2023.01.010">Alabi, Vanderelst, and Minai</a>.</p>
+</section>
+</article>
+<nav class="detail-next" aria-label="More projects"><a href="../#research">← Research</a><a href="constraint-feedback.html">Constraint feedback →</a></nav>
+</main>
+<footer><p>© 2026 Qindong Gan · <a href="mailto:ganqindong@fuji.waseda.jp">Contact</a></p></footer>
+</div>
+<script>
+(() => {
+  const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const controls = Array.from(document.querySelectorAll('.replay-toggle[data-target]')).map(button => {
+    const image = document.getElementById(button.dataset.target);
+    let playing = false;
+    function setPlaying(value) {
+      playing = value;
+      image.src = value ? image.dataset.animation : image.dataset.poster;
+      button.textContent = value ? 'Pause animation' : 'Play animation';
+      button.setAttribute('aria-label', `${value ? 'Pause' : 'Play'} ${button.dataset.name}`);
+      button.setAttribute('aria-pressed', String(value));
+    }
+    button.addEventListener('click', () => setPlaying(!playing));
+    setPlaying(!motion.matches);
+    return { setPlaying };
+  });
+  motion.addEventListener('change', event => {
+    if (event.matches) controls.forEach(control => control.setPlaying(false));
+  });
+})();
+</script>
+</body>
+</html>

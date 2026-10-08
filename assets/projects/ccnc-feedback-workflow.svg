@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="776" height="456" viewBox="0 0 776 456" role="img" aria-labelledby="title desc">
+<title id="title">Testing the multiplier feedback loop</title>
+<desc id="desc">Constraint errors update multipliers, which price costs in training rewards and affect MAPPO policy updates. Updated policies change rates and the next error. Cut freezes the multiplier. Misdirect preserves multiplier trajectories but breaks agent targeting. Reverse flips the dual-step sign while retaining the signal and targeting. These are training interventions, not additional inputs to a deployed policy.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10z" fill="#687586"/></marker></defs>
+<rect width="100%" height="100%" fill="#fff"/>
+<text x="388.0" y="31" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="700" fill="#000">Test the feedback loop</text>
+<rect x="16" y="65" width="168" height="112" rx="7" fill="#fff" stroke="#d4d8de"/>
+<text x="100.0" y="94" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#000">Constraint error</text>
+<text x="100.0" y="123" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#000">Service-constraint</text>
+<text x="100.0" y="147" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#000">error signal</text>
+<polyline points="184,121 208,121" fill="none" stroke="#687586" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="208" y="65" width="168" height="112" rx="7" fill="#fff" stroke="#d4d8de"/>
+<text x="292.0" y="94" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#000">Multiplier λ</text>
+<text x="292.0" y="123" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#000">Update the price</text>
+<text x="292.0" y="147" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#000">from the error</text>
+<polyline points="376,121 400,121" fill="none" stroke="#687586" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="400" y="65" width="168" height="112" rx="7" fill="#fff" stroke="#d4d8de"/>
+<text x="484.0" y="94" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#000">Training reward</text>
+<text x="484.0" y="123" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#000">Price the</text>
+<text x="484.0" y="147" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#000">constraint cost</text>
+<polyline points="568,121 592,121" fill="none" stroke="#687586" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="592" y="65" width="168" height="112" rx="7" fill="#fff" stroke="#d4d8de"/>
+<text x="676.0" y="94" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#000">Policy update</text>
+<text x="676.0" y="123" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#000">Train the</text>
+<text x="676.0" y="147" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#000">MAPPO agents</text>
+<polyline points="676,177 676,211 100,211 100,177" fill="none" stroke="#687586" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+<text x="388" y="249" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#000">Updated policies change rates and the next constraint error.</text>
+<rect x="16" y="292" width="232" height="145" rx="7" fill="#f5f5f5" stroke="#d4d8de"/>
+<text x="132.0" y="321" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="700" fill="#000">Cut</text>
+<text x="132.0" y="350" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#000">Freeze the multiplier.</text>
+<text x="132.0" y="374" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#000">Remove error-driven</text>
+<text x="132.0" y="398" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#000">updates.</text>
+<rect x="272" y="292" width="232" height="145" rx="7" fill="#f5f5f5" stroke="#d4d8de"/>
+<text x="388.0" y="321" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="700" fill="#000">Misdirect</text>
+<text x="388.0" y="350" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#000">Keep multiplier</text>
+<text x="388.0" y="374" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#000">trajectories; break</text>
+<text x="388.0" y="398" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#000">agent targeting.</text>
+<rect x="528" y="292" width="232" height="145" rx="7" fill="#f5f5f5" stroke="#d4d8de"/>
+<text x="644.0" y="321" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="700" fill="#000">Reverse</text>
+<text x="644.0" y="350" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#000">Flip the dual-step sign.</text>
+<text x="644.0" y="374" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#000">Keep the signal and</text>
+<text x="644.0" y="398" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#000">agent targeting.</text>
+</svg>

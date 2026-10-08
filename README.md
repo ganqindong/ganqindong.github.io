@@ -1,2 +1,5 @@
-# Frankiegan912.github.io
-Qindong Gan — academic homepage and CV
+# Qindong Gan's Website
+
+Personal website for Qindong Gan.
+
+Published at https://ganqindong.github.io/.

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 590" role="img"><title>RGB-thermal semantic segmentation</title><defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#88959f"/></marker></defs><rect width="430" height="590" rx="0" fill="#ffffff"/>
+<text x="25" y="35" fill="#26292b" font-family="Arial,sans-serif" font-size="23" font-weight="bold">RGB-thermal</text>
+<text x="25" y="64" fill="#26292b" font-family="Arial,sans-serif" font-size="23" font-weight="bold">semantic segmentation</text>
+<rect x="25" y="100" width="380" height="90" rx="0" fill="white" stroke="#bcc4c9"/>
+<text x="215" y="135" text-anchor="middle" fill="#2f5d78" font-family="Arial,sans-serif" font-size="23" font-weight="bold">RGB + thermal images</text>
+<text x="215" y="165" text-anchor="middle" fill="#687078" font-family="Arial,sans-serif" font-size="18">Complementary visual inputs</text>
+<path d="M215,197 V216" stroke="#88959f" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="25" y="225" width="380" height="90" rx="0" fill="white" stroke="#bcc4c9"/>
+<text x="215" y="260" text-anchor="middle" fill="#2f5d78" font-family="Arial,sans-serif" font-size="23" font-weight="bold">Multimodal model</text>
+<text x="215" y="290" text-anchor="middle" fill="#687078" font-family="Arial,sans-serif" font-size="18">DFormerV2 adaptation + fusion</text>
+<path d="M215,322 V341" stroke="#88959f" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="25" y="350" width="380" height="90" rx="0" fill="white" stroke="#bcc4c9"/>
+<text x="215" y="385" text-anchor="middle" fill="#2f5d78" font-family="Arial,sans-serif" font-size="23" font-weight="bold">Semantic predictions</text>
+<text x="215" y="415" text-anchor="middle" fill="#687078" font-family="Arial,sans-serif" font-size="18">A class label for each pixel</text>
+<text x="25" y="485" fill="#687078" font-family="Arial,sans-serif" font-size="17">Method schematic for the SERES internship.</text>
+</svg>

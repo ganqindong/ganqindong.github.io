@@ -3,77 +3,116 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Qindong Gan (Frankie) studies multi-agent learning, networked systems, and reliable evaluation of adaptive agents at Waseda University.">
-<title>Qindong Gan | Academic Homepage</title>
-<style>
-:root{color-scheme:light;--bg:#faf9f7;--text:#3d3929;--muted:#756f63;--accent:#a65234;--line:#e8d9cf;--surface:#fff;--shadow:rgba(106,67,48,.12)}
-:root[data-theme="dark"]{color-scheme:dark;--bg:#1a1917;--text:#e3ded5;--muted:#b4a99b;--accent:#e89573;--line:#49382e;--surface:#24211e;--shadow:rgba(0,0,0,.3)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased}
-a{color:var(--accent);text-decoration:none;text-underline-offset:.18em}a:hover{text-decoration:underline}a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
-.top-nav{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
-.nav-inner{max-width:1120px;min-height:60px;margin:auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand{color:var(--text);font-weight:650;font-size:18px;white-space:nowrap}.nav-links{display:flex;align-items:center;gap:22px;font-size:13px}.nav-links a{color:var(--text)}
-.theme-toggle{width:38px;height:38px;border:1px solid var(--line);border-radius:50%;background:var(--surface);color:var(--text);cursor:pointer;font-size:18px;line-height:1}
-.layout{max-width:1120px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:280px minmax(0,1fr);column-gap:64px;align-items:start}
-.sidebar{position:sticky;top:60px;padding:60px 0 40px;text-align:center}
-.avatar{display:grid;place-items:center;width:200px;height:200px;margin:0 auto 24px;border-radius:50%;background:linear-gradient(145deg,#ead9cc,#d7b49f);box-shadow:0 6px 24px var(--shadow);color:#674b3b;font:64px Georgia,serif;letter-spacing:-.07em;overflow:hidden}
-.avatar img{width:100%;height:100%;object-fit:cover;transform:scale(2.4);transform-origin:50% 30%}.sidebar h1{margin:0 0 3px;font-size:28px;line-height:1.25}.zh-name{margin:0 0 12px;color:var(--muted);font-size:15px}
-.role{margin:0 0 18px;color:var(--muted);font-size:14px;line-height:1.55}.email{display:block;margin-bottom:22px;font-size:13px;overflow-wrap:anywhere}
-.social-links{display:flex;flex-wrap:wrap;justify-content:center;gap:9px}.social-links a{min-width:58px;padding:7px 10px;border:1px solid var(--line);border-radius:999px;background:var(--surface);font-size:13px;box-shadow:0 2px 8px var(--shadow)}
-.content{min-width:0;padding:60px 0 36px}section{margin-bottom:42px;scroll-margin-top:86px}
-h2{display:inline-block;margin:0 0 18px;padding-bottom:7px;border-bottom:2px solid var(--accent);color:var(--accent);font-size:19px;font-weight:650}
-h3{margin:0 0 4px;font-size:16px;line-height:1.4}p{margin:0 0 14px}.intro{font-size:17px}
-.timeline{border-left:2px solid var(--line);margin-left:7px}.timeline-item{position:relative;padding:0 0 22px 22px}.timeline-item:last-child{padding-bottom:0}
-.timeline-item::before{content:"";position:absolute;top:7px;left:-6px;width:10px;height:10px;border-radius:50%;background:var(--accent);border:2px solid var(--bg)}
-.meta{color:var(--muted);font-size:13px;margin-bottom:7px}.timeline-item p:last-child{margin-bottom:0}.research-item{margin-bottom:24px}.research-item:last-child{margin-bottom:0}.research-item p{margin-bottom:0}
-.bibliography{list-style:none;padding:0;margin:0}.bibliography li{border-left:3px solid var(--accent);padding:2px 0 2px 15px;margin:0 0 20px}.bibliography li:last-child{margin-bottom:0}
-.pub-title{display:block;font-weight:650}.pub-authors,.pub-status{color:var(--muted);font-size:14px}.pub-status{display:block}
-footer{border-top:1px solid var(--line);padding:22px 0 30px;color:var(--muted);font-size:12px}footer p{margin-bottom:4px}
-@media(max-width:800px){.nav-inner{padding:0 20px}.nav-links{gap:12px}.nav-links .optional{display:none}.layout{display:block;padding:0 24px}.sidebar{position:static;padding:38px 0 10px}.avatar{width:150px;height:150px;font-size:48px}.content{padding-top:30px}}
-@media(max-width:480px){.nav-links a:not(.cv-nav){display:none}.layout{padding:0 20px}.content{padding-top:20px}.intro{font-size:16px}}
-</style>
-<script>try{const saved=localStorage.getItem('theme');if(saved==='dark'||(!saved&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.dataset.theme='dark'}catch(_){}</script>
+<meta name="description" content="Qindong Gan studies multi-agent reinforcement learning, decentralized decision-making, and reliable policy evaluation at Waseda University.">
+<title>Qindong Gan's Website</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Qindong Gan's Website">
+<meta property="og:description" content="Qindong Gan studies multi-agent reinforcement learning, decentralized decision-making, and reliable policy evaluation at Waseda University.">
+<meta property="og:url" content="https://ganqindong.github.io/">
+<meta property="og:image" content="https://ganqindong.github.io/profile-photo.webp">
+<meta property="og:image:alt" content="Qindong Gan at graduation">
+<meta property="og:image:width" content="846">
+<meta property="og:image:height" content="794">
+<link rel="stylesheet" href="assets/site.css?v=20261008-polish">
 </head>
 <body>
-<nav class="top-nav" aria-label="Main navigation"><div class="nav-inner">
-<a class="brand" href="./">Qindong Gan</a>
-<div class="nav-links"><a class="optional" href="#about">About</a><a class="optional" href="#research">Research</a><a class="optional" href="#publications">Writing</a><a class="cv-nav" href="Qindong_Gan_CV.pdf">CV</a><button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" title="Toggle light and dark mode">☾</button></div>
-</div></nav>
-<div class="layout">
-<aside class="sidebar" aria-label="Profile">
-<div class="avatar"><img src="profile-photo.png" alt="Qindong Gan at graduation"></div>
-<h1>Qindong Gan</h1><p class="zh-name" lang="zh">甘沁东</p>
-<p class="role">M.S. student in Computer Science and Communications Engineering<br>Waseda University · Tokyo</p>
-<a class="email" href="mailto:ganqindong@fuji.waseda.jp">ganqindong@fuji.waseda.jp</a>
-<div class="social-links" aria-label="Profile links"><a href="https://github.com/Frankiegan912">GitHub</a><a href="https://www.linkedin.com/in/qindong-gan">LinkedIn</a><a href="Qindong_Gan_CV.pdf">CV (PDF)</a></div>
+<a class="skip-link" href="#about">Skip to content</a>
+<div class="page">
+<nav class="site-nav" aria-label="Main navigation">
+<a class="home-link" href="./">Qindong Gan</a>
+<div class="nav-links"><a href="#education">Education</a><a href="#research">Research</a><a href="Qindong_Gan_CV.pdf">CV</a></div>
+</nav>
+<main>
+<header class="intro" id="about">
+<div class="intro-copy">
+<h1>Qindong Gan</h1>
+<p class="role">M.Eng. student, Waseda University</p>
+<div class="bio">
+<p>I study multi-agent reinforcement learning, with a focus on decentralized decision-making and reliable policy evaluation. I am advised by Prof. <a href="https://www.shimamotolab.sci.waseda.ac.jp/shigeru-shimamoto/">Shigeru Shimamoto</a>.</p>
+<p>My recent work examines whether constraint feedback shapes policy learning.</p>
+<p class="availability">I am applying to U.S. PhD programs for Fall 2027.</p>
+<nav class="contact-links" aria-label="Contact and profile links"><a href="mailto:ganqindong@fuji.waseda.jp">Email</a><a href="Qindong_Gan_CV.pdf">CV</a></nav>
+</div>
+</div>
+<div class="portrait"><img src="profile-photo.webp" alt="Qindong Gan at graduation" width="846" height="794"></div>
+</header>
+<section id="education" aria-labelledby="education-title">
+<h2 id="education-title">Education</h2>
+<div class="education-grid">
+<div>
+<div class="education-list">
+<div class="education-item"><h3>Waseda University</h3><span class="date">2025–2027 (expected)</span><p>M.Eng. in Computer Science and Communications Engineering</p></div>
+<div class="education-item"><h3>University of Cincinnati &amp; Chongqing University</h3><span class="date">2020–2025</span><p>B.S. in Electrical Engineering (UC)<br>B.Eng. in Electrical Engineering and Automation (CQU)</p><p class="education-context">Joint undergraduate program; final year at UC, 2024–2025.</p></div>
+</div>
+<nav class="education-links inline-links" aria-label="Application materials"><a href="materials/Qindong_Gan_Transcripts.pdf" title="Public copy with personal identifiers removed" aria-label="Download public transcripts with personal identifiers removed">Transcripts (PDF)</a></nav>
+</div>
+<aside class="english-scores" aria-labelledby="english-title">
+<h3 id="english-title">English scores</h3>
+<p class="test-total">TOEFL iBT <strong>95 / 120</strong></p>
+<p class="test-speaking">Speaking: 23 / 30</p>
+<p class="test-date">January 18, 2025</p>
 </aside>
-<main class="content">
-<section id="about"><h2>About Me</h2>
-<p class="intro">I am a master's student at Waseda University, advised by Prof. Shigeru Shimamoto. I study learning and decision-making in multi-agent and networked systems.</p>
-<p>My current work examines decentralized wireless control under shared constraints and how to test whether adaptive mechanisms use the feedback they are designed to use. I am also interested in reliable evaluation for autonomous research agents. Across these projects, I use problem structure, controlled interventions, and independent audits to distinguish apparent performance from behavior that holds under evaluation.</p>
-<p>I am applying to U.S. PhD programs for <strong>Fall 2027</strong>. <a href="Qindong_Gan_CV.pdf">Download my CV</a>.</p></section>
-<section id="education"><h2>Education</h2><div class="timeline">
-<div class="timeline-item"><h3>Waseda University</h3><div class="meta">M.S., Computer Science and Communications Engineering · 2025–2027 (expected)</div><p>Advised by Prof. Shigeru Shimamoto.</p></div>
-<div class="timeline-item"><h3>University of Cincinnati and Chongqing University</h3><div class="meta">Joint undergraduate program · 2025</div><p>B.S. in Electrical Engineering (Cincinnati) and B.Eng. in Electrical Engineering and Automation (Chongqing).</p></div>
-</div></section>
-<section id="research"><h2>Research &amp; Experience</h2>
-<div class="research-item"><h3>Causally Verified QoS-Floor Constraints for Decentralized SAGIN Access Association</h3><div class="meta">Waseda University · 2026 · first author · manuscript under review at IEEE CCNC 2027</div><p>I formulated decentralized access association as an interference-coupled constrained Markov game and implemented MAPPO baselines in EPyMARL. Controlled cut, cross-agent misdirection, and sign-reversal interventions test whether learned multipliers carry the intended constraint signal. In the reported simulations, the revised expected-shortfall constraint raised the per-slot floor by 17.1× at N = 12 and 63.1× at N = 20 over matched unconstrained MAPPO; the study remains simulation-only.</p></div>
-<div class="research-item"><h3>ShinsaEvolve: Independent Audits in LLM-Driven Recipe Evolution</h3><div class="meta">Independent research project and technical report · 2026 · not peer reviewed</div><p>I developed an audit-gated program-evolution system that evaluates trained policies on fresh seeds using harness-controlled raw rewards without executing candidate recipe code during audits. A 2×2 LunarLander study covered 12 independent outer-loop runs and 180 candidates. Candidate-shaped rewards amplified selection errors; fixed-raw training removed score saturation but did not eliminate training-to-audit misranking. <a href="https://github.com/Frankiegan912/shinsa-evolve">Code and reproducibility artifacts</a> · <a href="https://github.com/Frankiegan912/shinsa-evolve/blob/main/paper/main.pdf">Technical report</a></p></div>
-<div class="research-item"><h3>Bio-inspired Mapping and Navigation for Robots</h3><div class="meta">University of Cincinnati · 2024–2025 · supervised by Prof. Ali Minai</div><p>I contributed to a hippocampus-inspired navigation model using place-cell, boundary-vector-cell, and head-direction-cell representations. My work included visual preprocessing, CNN feature extraction, multimodal fusion experiments, parameter tuning, and analysis of representation stability in simulation.</p></div>
-<div class="research-item"><h3>RGB-Thermal Semantic Segmentation for Autonomous Driving</h3><div class="meta">SERES Group · 2025 · AI algorithm engineering internship</div><p>I adapted DFormerV2 for RGB-thermal inputs, implemented multimodal fusion modules, and built the training and evaluation workflow for comparative and ablation studies.</p></div>
+</div>
 </section>
-<section id="publications"><h2>Manuscripts &amp; Reports</h2><ol class="bibliography">
-<li><span class="pub-title">Causally Verified QoS-Floor Constraints for Decentralized SAGIN Access Association</span><span class="pub-authors">Q. Gan, Z. Pan, T. D. Ho, J. Wu, and S. Shimamoto</span><span class="pub-status">Manuscript under review, IEEE CCNC 2027</span></li>
-<li><span class="pub-title">ShinsaEvolve: Independent Audits in LLM-Driven Recipe Evolution</span><span class="pub-authors">Q. Gan</span><span class="pub-status">Public research artifact and <a href="https://github.com/Frankiegan912/shinsa-evolve/blob/main/paper/main.pdf">technical report</a>; not peer reviewed</span></li>
-</ol></section>
-<section id="contact"><h2>Contact</h2><p>The fastest way to reach me is <a href="mailto:ganqindong@fuji.waseda.jp">email</a>. I am happy to hear from groups working on multi-agent learning, networked systems, or reliable evaluation of adaptive agents.</p></section>
-<footer><p>© 2026 Qindong Gan · Last updated September 2026</p><p>Layout adapted from <a href="https://github.com/wzsyyh/luka-homepage-template">Luka Homepage Template</a> by Yuheng Yang.</p></footer>
-</main></div>
-<script>
-const toggle=document.querySelector('.theme-toggle');
-function updateToggle(){const dark=document.documentElement.dataset.theme==='dark';toggle.textContent=dark?'☀':'☾';toggle.setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode');toggle.setAttribute('aria-pressed',String(dark))}
-updateToggle();
-toggle.addEventListener('click',()=>{const dark=document.documentElement.dataset.theme==='dark';document.documentElement.dataset.theme=dark?'light':'dark';try{localStorage.setItem('theme',dark?'light':'dark')}catch(_){}updateToggle()});
-</script>
+<section id="research" aria-labelledby="research-title">
+<h2 id="research-title">Research</h2>
+<div class="project-list">
+<article class="publication project-row" id="ccnc-project">
+<a class="project-thumb" href="projects/constraint-feedback.html" aria-label="View the constraint feedback project"><img src="assets/projects/ccnc-system.png" alt="Satellite, aerial, and ground access links in the SAGIN simulation" width="720" height="450"></a>
+<div>
+<h3 id="publications"><a href="projects/constraint-feedback.html">Causally Verified QoS-Floor Constraints for Decentralized SAGIN Access Association</a></h3>
+<p class="authors"><strong>Qindong Gan</strong>, Zhenni Pan, Tu Dac Ho, Jun Wu, and Shigeru Shimamoto</p>
+<p class="venue">Conference paper · IEEE CCNC 2027 · Accepted for presentation and publication</p>
+<p>I test whether constraint feedback changes multi-agent learning and study the trade-off between worst-user service and throughput.</p>
+</div>
+</article>
+<article class="project-row" id="segmentation-project">
+<a class="project-thumb" href="projects/rgb-thermal.html" aria-label="View the thermal-guided segmentation demonstration"><img src="assets/projects/01335N-prediction-overlay.png" loading="lazy" alt="Nighttime MFNet scene with predicted cars in blue and a person in orange, from the 2026 public-data reconstruction" width="640" height="480"></a>
+<div>
+<h3><a href="projects/rgb-thermal.html">Thermal-guided semantic segmentation</a></h3>
+<p class="meta">SERES internship · 2025 · Exploratory automotive perception</p>
+<p>I adapted RGB-D segmentation to RGB-thermal perception. The project page shows the method and a 2026 reconstruction on public MFNet data.</p>
+</div>
+</article>
+<article class="project-row" id="robot-project">
+<a class="project-thumb scene" href="projects/robot-mapping.html" aria-label="View the bio-inspired robot mapping project"><img src="assets/projects/robot-cross-arena.png" loading="lazy" alt="Webots arena with colored landmarks and a central obstacle used in the capstone evaluation" width="800" height="639"></a>
+<div>
+<h3><a href="projects/robot-mapping.html">Bio-inspired mapping and navigation</a></h3>
+<p class="meta">Senior capstone project · University of Cincinnati · 2024–2025</p>
+<p>I worked on visual feature extraction and evaluation for a camera–LiDAR extension of a hippocampus-inspired navigation framework.</p>
+</div>
+</article>
+</div>
+</section>
+<section id="teaching" aria-labelledby="teaching-title">
+<h2 id="teaching-title">Teaching Experience</h2>
+<article class="activity-item">
+<h3>Teaching Assistant, University of Cincinnati · 2024–2025</h3>
+<p>Supported engineering recitations and labs in English and graded assignments and exams.</p>
+</article>
+</section>
+<section id="presentations-honors" aria-labelledby="activities-title">
+<h2 id="activities-title">Presentations &amp; Honors</h2>
+<div class="activity-list">
+<article class="activity-item">
+<h3>Multi-Agent Reinforcement Learning for Intelligent Access Management in Space-Air-Ground Integrated Networks</h3>
+<p class="activity-meta">ASPIRE-CRC-TCA International Workshop · Memorial University · August 2026</p>
+<p class="activity-award">Best Master's Student Presentation Award</p>
+</article>
+<article class="activity-item">
+<h3>Dean's List</h3>
+<p class="activity-meta">University of Cincinnati · Fall 2024 and Spring 2025</p>
+</article>
+<article class="activity-item">
+<h3>Cooperative Education &amp; Practice - Excellence</h3>
+<p class="activity-meta">University of Cincinnati · Spring 2025</p>
+</article>
+</div>
+</section>
+</main>
+<footer><p>© 2026 Qindong Gan · Updated October 8, 2026</p><p>Original layout credit: <a href="https://github.com/wzsyyh/luka-homepage-template">Luka Homepage Template</a> by Yuheng Yang.</p></footer>
+</div>
 </body>
 </html>

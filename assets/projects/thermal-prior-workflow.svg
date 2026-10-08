@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="550" viewBox="0 0 1400 550" role="img" aria-labelledby="title desc">
+  <title id="title">Thermal-intensity prior in the reconstructed DFormerV2-S segmentation workflow</title>
+  <desc id="desc">RGB features provide queries, keys and values. Normalized thermal intensity differences and a spatial distance prior bias attention. Four scales of resulting features are decoded into semantic masks.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#64748b"/></marker>
+    <style>
+      text { font-family: Arial, Helvetica, sans-serif; fill: #162235; }
+      .heading { font-size: 30px; font-weight: 700; }
+      .label { font-size: 22px; font-weight: 700; }
+      .body { font-size: 18px; fill: #546377; }
+      .small { font-size: 17px; fill: #546377; }
+      .flow { fill: none; stroke: #64748b; stroke-width: 3; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect width="1400" height="550" rx="18" fill="#f8fafc"/>
+  <text x="48" y="61" class="heading">RGB features, guided by a thermal-intensity prior</text>
+  <text x="49" y="96" class="body">2026 public-data reconstruction · DFormerV2-S · MFNet</text>
+  <rect x="50" y="146" width="205" height="100" rx="14" fill="#e5efff" stroke="#bad2f4"/>
+  <text x="77" y="186" class="label">RGB input</text><text x="77" y="218" class="body">Visible appearance</text>
+  <rect x="318" y="146" width="236" height="100" rx="14" fill="#e5efff" stroke="#bad2f4"/>
+  <text x="341" y="186" class="label">RGB feature tokens</text><text x="341" y="218" class="body">Queries, keys, values</text>
+  <rect x="50" y="302" width="205" height="116" rx="14" fill="#fff0e8" stroke="#f4c8b2"/>
+  <text x="77" y="343" class="label">Thermal input</text><text x="77" y="375" class="body">Normalize intensity</text><text x="77" y="400" class="small">Not metric depth</text>
+  <rect x="318" y="302" width="236" height="116" rx="14" fill="#fff0e8" stroke="#f4c8b2"/>
+  <text x="341" y="343" class="label">Attention prior</text><text x="341" y="375" class="body">Thermal differences</text><text x="341" y="400" class="body">+ spatial distances</text>
+  <rect x="627" y="202" width="247" height="160" rx="14" fill="#e0f2ef" stroke="#a5d4ca"/>
+  <text x="652" y="248" class="label">Guided attention</text><text x="652" y="283" class="body">RGB similarity + prior</text><text x="652" y="312" class="body">Prior biases QK logits</text><text x="652" y="341" class="small">Repeated across stages</text>
+  <rect x="945" y="216" width="177" height="132" rx="14" fill="#eef0f7" stroke="#ccd3e5"/>
+  <text x="967" y="257" class="label">MLP decoder</text><text x="967" y="290" class="body">Fuse 4 scales</text><text x="967" y="319" class="body">9-class logits</text>
+  <rect x="1190" y="216" width="163" height="132" rx="14" fill="#eef0f7" stroke="#ccd3e5"/>
+  <text x="1211" y="257" class="label">Prediction</text><text x="1211" y="290" class="body">Class argmax</text><text x="1211" y="319" class="body">480 × 640</text>
+  <path d="M255 196H306" class="flow"/><path d="M255 360H306" class="flow"/>
+  <path d="M554 196H587V245H615" class="flow"/><path d="M554 360H587V319H615" class="flow"/>
+  <path d="M874 282H933" class="flow"/><path d="M1122 282H1178" class="flow"/>
+  <text x="50" y="470" class="body">RGB-only control: same architecture, independently retrained with a constant auxiliary map; thermal differences become zero.</text>
+  <text x="50" y="505" class="small">Upstream geometry-prior equations reused. Historical internship formula / fusion edits were not recovered.</text>
+</svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="776" height="430" viewBox="0 0 776 430" role="img" aria-labelledby="title desc">
+<title id="title">Thermal-guided RGB attention workflow</title>
+<desc id="desc">Normalized thermal-intensity differences and spatial distances form a prior for attention between RGB features. Four feature scales feed a decoder and nine-class semantic prediction.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#687586"/></marker></defs>
+<rect width="100%" height="100%" fill="white"/>
+<polyline points="210,77 260,77" fill="none" stroke="#687586" stroke-width="2.2" marker-end="url(#arrow)"/>
+<polyline points="210,227 260,227" fill="none" stroke="#687586" stroke-width="2.2" marker-end="url(#arrow)"/>
+<polyline points="470,77 505,77 505,125 535,125" fill="none" stroke="#687586" stroke-width="2.2" marker-end="url(#arrow)"/>
+<polyline points="470,227 505,227 505,205 535,205" fill="none" stroke="#687586" stroke-width="2.2" marker-end="url(#arrow)"/>
+<polyline points="640,250 640,298 365,298 365,335" fill="none" stroke="#687586" stroke-width="2.2" marker-end="url(#arrow)"/>
+<polyline points="470,375 535,375" fill="none" stroke="#687586" stroke-width="2.2" marker-end="url(#arrow)"/>
+<rect x="30" y="35" width="180" height="85" rx="8" fill="#e8f0ff" stroke="#d8dce3"/>
+<text x="120.0" y="64" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#000">RGB input</text>
+<text x="120.0" y="92" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#000">Visible appearance</text>
+<rect x="260" y="35" width="210" height="85" rx="8" fill="#e8f0ff" stroke="#d8dce3"/>
+<text x="365.0" y="64" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#000">RGB features</text>
+<text x="365.0" y="92" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#000">Queries, keys, values</text>
+<rect x="30" y="175" width="180" height="105" rx="8" fill="#fff0e8" stroke="#d8dce3"/>
+<text x="120.0" y="205" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#000">Thermal input</text>
+<text x="120.0" y="233" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#000">Normalized intensity</text>
+<rect x="260" y="175" width="210" height="105" rx="8" fill="#fff0e8" stroke="#d8dce3"/>
+<text x="365.0" y="205" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#000">Attention prior</text>
+<text x="365.0" y="233" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#000">Thermal differences</text>
+<text x="365.0" y="259" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#000">+ spatial distances</text>
+<rect x="535" y="90" width="210" height="160" rx="8" fill="#e6f5f1" stroke="#d8dce3"/>
+<text x="640.0" y="120" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#000">Guided attention</text>
+<text x="640.0" y="148" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#000">RGB attention</text>
+<text x="640.0" y="174" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#000">+ thermal prior</text>
+<rect x="260" y="335" width="210" height="80" rx="8" fill="#f1f1f7" stroke="#d8dce3"/>
+<text x="365.0" y="364" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#000">MLP decoder</text>
+<text x="365.0" y="392" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#000">4 feature scales</text>
+<rect x="535" y="335" width="210" height="80" rx="8" fill="#f1f1f7" stroke="#d8dce3"/>
+<text x="640.0" y="364" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#000">Prediction</text>
+<text x="640.0" y="392" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#000">9 semantic classes</text>
+</svg>

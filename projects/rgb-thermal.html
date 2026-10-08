@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="RGB-thermal segmentation engineering during Qindong Gan's 2025 SERES internship, illustrated with a 2026 public-data reconstruction on MFNet.">
+<title>Thermal-guided Semantic Segmentation | Qindong Gan's Website</title>
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Thermal-guided Semantic Segmentation | Qindong Gan's Website">
+<meta property="og:description" content="RGB-thermal segmentation engineering during Qindong Gan's 2025 SERES internship, illustrated with a 2026 public-data reconstruction on MFNet.">
+<meta property="og:url" content="https://ganqindong.github.io/projects/rgb-thermal.html">
+<meta property="og:image" content="https://ganqindong.github.io/assets/projects/rgbt-mfnet-comparison.png">
+<meta property="og:image:alt" content="Daytime and nighttime RGB-only and RGB-thermal segmentation comparison on public MFNet">
+<meta property="og:image:width" content="2720">
+<meta property="og:image:height" content="1260">
+<link rel="stylesheet" href="../assets/site.css?v=20261008-polish">
+</head>
+<body>
+<a class="skip-link" href="#project-content">Skip to project</a>
+<div class="page detail-page">
+<nav class="site-nav" aria-label="Main navigation"><a class="home-link" href="../">Qindong Gan</a><div class="nav-links"><a href="../#research">Research</a><a href="../Qindong_Gan_CV.pdf">CV</a></div></nav>
+<main id="project-content">
+<article class="project" id="segmentation-project" aria-labelledby="segmentation-title">
+<header class="project-hero">
+<h1 id="segmentation-title">Thermal-guided Semantic Segmentation</h1>
+<p class="authors"><a href="../"><strong>Qindong Gan</strong></a></p>
+<p class="institutions">SERES internship · 2025</p>
+<p class="meta">Exploratory automotive perception · MFNet public-data demo</p>
+<nav class="project-links" aria-label="Project resources"><a href="../papers/rgbt-technical-report.pdf">Technical Report</a><a href="https://github.com/VCIP-RGBD/DFormer">Upstream Code</a></nav>
+</header>
+<figure class="visual project-teaser">
+<div class="teaser-pair">
+<div><span class="visual-label">RGB input</span><a href="../assets/projects/01335N-rgb.png" aria-label="Enlarge the nighttime RGB input"><img src="../assets/projects/01335N-rgb.png" alt="Nighttime MFNet scene 01335N, showing a dark road with cars and a pedestrian." width="640" height="480"></a></div>
+<div><span class="visual-label">RGB-T prediction</span><a href="../assets/projects/01335N-prediction-overlay.png" aria-label="Enlarge the nighttime RGB-T prediction"><img src="../assets/projects/01335N-prediction-overlay.png" alt="The same nighttime scene with RGB-T predictions overlaid: cars in blue and a person in orange; Unlabeled pixels are transparent." width="640" height="480"></a></div>
+</div>
+<figcaption>Nighttime MFNet scene (01335N): RGB input and its RGB-T semantic prediction.</figcaption>
+</figure>
+<section class="abstract-band" aria-labelledby="abstract"><div class="abstract-inner">
+<h2 id="abstract">Abstract</h2>
+<p>Low light can make people and other objects harder to distinguish in RGB images. Thermal input provides complementary contrast for pixel-level scene understanding.</p>
+<p>During my internship at SERES, I adapted an RGB-D segmentation workflow to RGB-thermal inputs, working on attention-prior and fusion adaptation, data preparation, training, and evaluation.</p>
+<p class="result-note">Figures and metrics come from a public MFNet reconstruction completed in 2026, separate from the 2025 internship. Company data and archived company results are not shown.</p>
+
+</div></section>
+<section class="project-section" aria-labelledby="method">
+<h2 id="method">Method</h2>
+<p>Differences in normalized thermal intensity, together with spatial distances, form an attention prior. This prior biases attention between RGB features. A multiscale MLP decoder combines four feature scales to predict nine semantic classes.</p>
+<figure class="visual">
+<a href="../assets/projects/thermal-prior-workflow-readable.svg" aria-label="Enlarge the thermal-guided attention workflow"><picture><source media="(max-width: 560px)" srcset="../assets/projects/thermal-prior-workflow-mobile.svg" width="380" height="735"><img src="../assets/projects/thermal-prior-workflow-readable.svg" alt="RGB features enter attention. Normalized thermal-intensity differences and spatial distances provide its prior. Four feature scales feed an MLP decoder, followed by nine-class semantic prediction." width="776" height="430"></picture></a>
+<figcaption>Based on <a href="https://arxiv.org/abs/2504.04701">DFormerV2</a>, using normalized thermal intensity in place of auxiliary depth. The reconstruction reuses the upstream prior formula; the complete historical formula and fusion edits were not recovered. <a href="../papers/rgbt-technical-report.pdf">Technical details</a>.</figcaption>
+</figure>
+
+</section>
+<section class="project-section" aria-labelledby="results">
+<h2 id="results">Results</h2>
+<span id="demonstration"></span>
+<figure class="visual rgbt-comparison">
+<div class="comparison-scene"><h3>Daytime · MFNet 01464D</h3><div class="comparison-inputs"><div class="comparison-panel"><span class="visual-label">RGB input</span><a href="../assets/projects/rgbt-mfnet-comparison.png" aria-label="Enlarge Daytime MFNet scene: RGB input"><svg viewBox="60 305 500 375" width="500" height="375" role="img" aria-labelledby="daytime-0-label" xmlns="http://www.w3.org/2000/svg"><title id="daytime-0-label">Daytime MFNet scene: RGB input</title><image href="../assets/projects/rgbt-mfnet-comparison.png" width="2720" height="1260"/></svg></a></div>
+<div class="comparison-panel"><span class="visual-label">Thermal input</span><a href="../assets/projects/rgbt-mfnet-comparison.png" aria-label="Enlarge Daytime MFNet scene: Thermal input"><svg viewBox="585 305 500 375" width="500" height="375" role="img" aria-labelledby="daytime-1-label" xmlns="http://www.w3.org/2000/svg"><title id="daytime-1-label">Daytime MFNet scene: Thermal input</title><image href="../assets/projects/rgbt-mfnet-comparison.png" width="2720" height="1260"/></svg></a></div></div><div class="comparison-predictions"><div class="comparison-panel"><span class="visual-label">RGB-only</span><a href="../assets/projects/rgbt-mfnet-comparison.png" aria-label="Enlarge Daytime MFNet scene: RGB-only"><svg viewBox="1110 305 500 375" width="500" height="375" role="img" aria-labelledby="daytime-2-label" xmlns="http://www.w3.org/2000/svg"><title id="daytime-2-label">Daytime MFNet scene: RGB-only</title><image href="../assets/projects/rgbt-mfnet-comparison.png" width="2720" height="1260"/></svg></a></div>
+<div class="comparison-panel"><span class="visual-label">RGB-T</span><a href="../assets/projects/rgbt-mfnet-comparison.png" aria-label="Enlarge Daytime MFNet scene: RGB-T"><svg viewBox="1635 305 500 375" width="500" height="375" role="img" aria-labelledby="daytime-3-label" xmlns="http://www.w3.org/2000/svg"><title id="daytime-3-label">Daytime MFNet scene: RGB-T</title><image href="../assets/projects/rgbt-mfnet-comparison.png" width="2720" height="1260"/></svg></a></div>
+<div class="comparison-panel"><span class="visual-label">Ground truth</span><a href="../assets/projects/rgbt-mfnet-comparison.png" aria-label="Enlarge Daytime MFNet scene: Ground truth"><svg viewBox="2160 305 500 375" width="500" height="375" role="img" aria-labelledby="daytime-4-label" xmlns="http://www.w3.org/2000/svg"><title id="daytime-4-label">Daytime MFNet scene: Ground truth</title><image href="../assets/projects/rgbt-mfnet-comparison.png" width="2720" height="1260"/></svg></a></div></div></div>
+<div class="comparison-scene"><h3>Nighttime · MFNet 01335N</h3><div class="comparison-inputs"><div class="comparison-panel"><span class="visual-label">RGB input</span><a href="../assets/projects/rgbt-mfnet-comparison.png" aria-label="Enlarge Nighttime MFNet scene: RGB input"><svg viewBox="60 745 500 375" width="500" height="375" role="img" aria-labelledby="nighttime-0-label" xmlns="http://www.w3.org/2000/svg"><title id="nighttime-0-label">Nighttime MFNet scene: RGB input</title><image href="../assets/projects/rgbt-mfnet-comparison.png" width="2720" height="1260"/></svg></a></div>
+<div class="comparison-panel"><span class="visual-label">Thermal input</span><a href="../assets/projects/rgbt-mfnet-comparison.png" aria-label="Enlarge Nighttime MFNet scene: Thermal input"><svg viewBox="585 745 500 375" width="500" height="375" role="img" aria-labelledby="nighttime-1-label" xmlns="http://www.w3.org/2000/svg"><title id="nighttime-1-label">Nighttime MFNet scene: Thermal input</title><image href="../assets/projects/rgbt-mfnet-comparison.png" width="2720" height="1260"/></svg></a></div></div><div class="comparison-predictions"><div class="comparison-panel"><span class="visual-label">RGB-only</span><a href="../assets/projects/rgbt-mfnet-comparison.png" aria-label="Enlarge Nighttime MFNet scene: RGB-only"><svg viewBox="1110 745 500 375" width="500" height="375" role="img" aria-labelledby="nighttime-2-label" xmlns="http://www.w3.org/2000/svg"><title id="nighttime-2-label">Nighttime MFNet scene: RGB-only</title><image href="../assets/projects/rgbt-mfnet-comparison.png" width="2720" height="1260"/></svg></a></div>
+<div class="comparison-panel"><span class="visual-label">RGB-T</span><a href="../assets/projects/rgbt-mfnet-comparison.png" aria-label="Enlarge Nighttime MFNet scene: RGB-T"><svg viewBox="1635 745 500 375" width="500" height="375" role="img" aria-labelledby="nighttime-3-label" xmlns="http://www.w3.org/2000/svg"><title id="nighttime-3-label">Nighttime MFNet scene: RGB-T</title><image href="../assets/projects/rgbt-mfnet-comparison.png" width="2720" height="1260"/></svg></a></div>
+<div class="comparison-panel"><span class="visual-label">Ground truth</span><a href="../assets/projects/rgbt-mfnet-comparison.png" aria-label="Enlarge Nighttime MFNet scene: Ground truth"><svg viewBox="2160 745 500 375" width="500" height="375" role="img" aria-labelledby="nighttime-4-label" xmlns="http://www.w3.org/2000/svg"><title id="nighttime-4-label">Nighttime MFNet scene: Ground truth</title><image href="../assets/projects/rgbt-mfnet-comparison.png" width="2720" height="1260"/></svg></a></div></div></div>
+<div class="comparison-key" aria-label="Displayed class colors"><span><i style="background:#388bfd"></i>Car</span><span><i style="background:#f46c4f"></i>Person</span><span><i style="background:#a66ff0"></i>Bicycle</span><span><i style="background:#1db69a"></i>Curve</span></div>
+<figcaption>Selected daytime and nighttime test scenes. Thermal contrast is adjusted for display. Predictions are unretouched, and Unlabeled pixels remain transparent. These examples were selected for RGB-T outputs before the RGB-only results were available; they are not random samples. <a href="../assets/projects/rgbt-mfnet-comparison.png">Open full-size comparison</a>.</figcaption>
+</figure>
+
+<h3 id="comparison">RGB-only comparison</h3>
+<p>Both models used the same architecture, initialization, data splits, and training settings. Each was trained independently for 20 epochs with one random seed. The RGB-only control uses a constant auxiliary map during training and inference, removing thermal-intensity differences while retaining the spatial prior.</p>
+<div class="result-table-wrap">
+<table class="result-table rgbt-metrics">
+<caption>MFNet test results</caption>
+<thead><tr><th scope="col">Evaluation</th><th scope="col">RGB-only</th><th scope="col">RGB-T</th><th scope="col">Gain (pp)</th></tr></thead>
+<tbody>
+<tr><th scope="row">9-class mIoU <span class="metric-scope">All 393 test images</span></th><td>49.89%</td><td>51.32%</td><td>+1.43</td></tr>
+<tr><th scope="row">Person IoU <span class="metric-scope">188 nighttime test images</span></th><td>48.90%</td><td>58.20%</td><td>+9.30</td></tr>
+</tbody>
+</table>
+</div>
+<p class="result-note">IoU measures overlap between predicted and ground-truth labels; mIoU averages it across classes. The reported 9-class mIoU includes Unlabeled. Checkpoints were selected separately using validation 8-class foreground mIoU. Gains are percentage points (pp), and aggregate metrics use all test pixels in each group.</p>
+<p class="result-note">Overall gains come from the full test set, not the illustrated scenes. This single-seed pilot evaluates thermal guidance under a matched 20-epoch setting. <a href="../papers/rgbt-technical-report.pdf">The technical report</a> includes the complete results, limitations, and upstream sources.</p>
+
+</section>
+</article>
+<nav class="detail-next" aria-label="More projects"><a href="../#research">← Research</a><a href="robot-mapping.html">Robot mapping →</a></nav>
+</main>
+<footer><p>© 2026 Qindong Gan · <a href="mailto:ganqindong@fuji.waseda.jp">Contact</a></p></footer>
+</div>
+</body>
+</html>

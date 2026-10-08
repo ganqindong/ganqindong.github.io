@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Qindong Gan's accepted IEEE CCNC 2027 study tests constraint feedback in multi-agent learning and evaluates a one-sided service-shortfall budget for SAGIN access association.">
+<title>Causally Verified QoS-Floor Constraints for Decentralized SAGIN Access Association | Qindong Gan's Website</title>
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Causally Verified QoS-Floor Constraints for Decentralized SAGIN Access Association | Qindong Gan's Website">
+<meta property="og:description" content="Qindong Gan's accepted IEEE CCNC 2027 study tests constraint feedback in multi-agent learning and evaluates a one-sided service-shortfall budget for SAGIN access association.">
+<meta property="og:url" content="https://ganqindong.github.io/projects/constraint-feedback.html">
+<meta property="og:image" content="https://ganqindong.github.io/assets/projects/ccnc-system.png">
+<meta property="og:image:alt" content="Satellite, aerial, and ground access links in the SAGIN simulation">
+<meta property="og:image:width" content="720">
+<meta property="og:image:height" content="450">
+<link rel="stylesheet" href="../assets/site.css?v=20261008-polish">
+</head>
+<body>
+<a class="skip-link" href="#project-content">Skip to project</a>
+<div class="page detail-page">
+<nav class="site-nav" aria-label="Main navigation"><a class="home-link" href="../">Qindong Gan</a><div class="nav-links"><a href="../#research">Research</a><a href="../Qindong_Gan_CV.pdf">CV</a></div></nav>
+<main id="project-content">
+<article class="project" id="ccnc-project" aria-labelledby="ccnc-title">
+<header class="project-hero">
+<h1 id="ccnc-title">Causally Verified QoS-Floor Constraints for Decentralized SAGIN Access Association</h1>
+<p class="authors"><a href="../"><strong>Qindong Gan</strong></a><sup>1</sup>, <a href="https://www.csce.waseda.ac.jp/teacher/zhenni-pan">Zhenni Pan</a><sup>1</sup>, <a href="https://www.ntnu.edu/employees/tu.d.ho">Tu Dac Ho</a><sup>2</sup>, <a href="https://waseda.elsevierpure.com/ja/persons/jun-wu/">Jun Wu</a><sup>1</sup>, and <a href="https://www.shimamotolab.sci.waseda.ac.jp/shigeru-shimamoto/">Shigeru Shimamoto</a><sup>1</sup></p>
+<p class="institutions"><sup>1</sup>Waseda University &nbsp; <sup>2</sup>Norwegian University of Science and Technology</p>
+<p class="meta">IEEE CCNC 2027 · Accepted for presentation and publication</p>
+<nav class="project-links" aria-label="Paper resources"><a href="../papers/ccnc2027-author-manuscript.pdf">Paper</a></nav>
+</header>
+<figure class="visual network project-teaser"><a href="../assets/projects/ccnc-system.png" aria-label="Enlarge the SAGIN system diagram"><img src="../assets/projects/ccnc-system.png" alt="Vehicles choose between a LEO satellite, an aerial platform, and a terrestrial base station; vehicles sharing a tier interfere." width="720" height="450"></a><figcaption>Vehicle-side access association with one node per tier. Source: accepted author manuscript, Fig. 1.</figcaption></figure>
+<section class="abstract-band" aria-labelledby="abstract"><div class="abstract-inner">
+<h2 id="abstract">Abstract</h2>
+<p>Decentralized access association in a space–air–ground network must protect the worst-served vehicle in each time slot. We test whether learned Lagrangian multipliers carry constraint feedback by cutting, misdirecting, and reversing the feedback signal, and by varying initialization. In this study, an apparent gain from a fleet-relative constraint came from episode-level multiplier resets. We then evaluate a one-sided expected-shortfall budget that responds to the service target. Simulations cover 6–20 vehicles. At 12 vehicles, the selected budget improves minimum per-slot service and reduces outage, with lower total throughput than unconstrained MAPPO.</p>
+</div></section>
+<section class="project-section" aria-labelledby="method">
+<h2 id="method">Method</h2>
+<p>I modeled access association as a constrained multi-agent decision problem, built the EPyMARL simulation, and implemented MAPPO baselines. I used controlled interventions and initialization ablations to diagnose multiplier feedback, then evaluated the service-throughput trade-off of a shortfall budget.</p>
+<figure class="visual"><a href="../assets/projects/ccnc-feedback-workflow.svg" aria-label="Enlarge the constraint-feedback schematic"><picture><source media="(max-width: 560px)" srcset="../assets/projects/ccnc-feedback-workflow-mobile.svg" width="380" height="930"><img src="../assets/projects/ccnc-feedback-workflow.svg" alt="Constraint errors update multiplier prices, which shape training rewards and policy updates. Cut removes error-driven updates; Misdirect breaks agent targeting while preserving multiplier trajectories; Reverse flips the dual-step sign." width="776" height="456"></picture></a><figcaption>Schematic based on Sec. IV-C and Table II. Cut tests budget tracking; the other controls test the service floor. Multipliers shape training rewards and are not policy inputs at execution.</figcaption></figure>
+<figure class="visual"><span class="visual-label">Multiplier trajectories during training</span><a href="../assets/projects/ccnc-feedback.png" aria-label="Enlarge multiplier trajectories"><img src="../assets/projects/ccnc-feedback.png" loading="lazy" alt="Training-log multiplier trajectories for two initializations of the repaired mechanism and the direct formulation." width="1066" height="558"></a><figcaption>Multiplier trajectories from training logs at N = 12, with ±1 standard error bands. Source: author manuscript, Fig. 2.</figcaption></figure>
+</section>
+<section class="project-section" aria-labelledby="results">
+<h2 id="results">Results</h2>
+<figure class="visual"><span class="visual-label">Outage under increasing load</span><a href="../assets/projects/ccnc-outage.png" aria-label="Enlarge outage versus vehicle count"><img src="../assets/projects/ccnc-outage.png" loading="lazy" alt="Reported outage at a 0.1 Mbps threshold for 6 to 20 vehicles, comparing unconstrained MAPPO with the shortfall-budget policy; error bars show one standard error." width="1070" height="525"></a><figcaption>Reported simulation results for 6–20 vehicles, with one node per tier. Each load uses its own reference budget. Seed means ±1 standard error. Source: author manuscript, Fig. 4.</figcaption></figure>
+<figure class="visual"><span class="visual-label">Service floor versus total throughput</span><a href="../assets/projects/ccnc-tradeoff.png" aria-label="Enlarge the throughput and service-floor trade-off"><img src="../assets/projects/ccnc-tradeoff.png" loading="lazy" alt="Sum throughput versus per-slot minimum rate, comparing budget settings, fixed penalties, unconstrained MAPPO, greedy SNR, and proportional fairness at 12 vehicles." width="983" height="795"></a><figcaption>Throughput versus per-slot minimum rate at N = 12. The budget selects an operating point on the fixed-penalty trade-off. Source: author manuscript, Fig. 3.</figcaption></figure>
+<div id="ccnc-results" class="result-table-wrap"><table class="result-table ccnc-table"><caption>Baseline comparison at N = 12 vehicles</caption><thead><tr><th scope="col">Method</th><th scope="col">Sum throughput<br>(Mbps)</th><th scope="col">Per-slot minimum<br>(Mbps)</th><th scope="col">Outage<br>(%)</th></tr></thead><tbody>
+<tr class="focus-row"><th scope="row">Shortfall budget (proposed)</th><td data-label="Throughput (Mbps)">222.7</td><td data-label="Per-slot min. (Mbps)">0.1917</td><td data-label="Outage (%)">7.2</td></tr>
+<tr><th scope="row">Unconstrained MAPPO</th><td data-label="Throughput (Mbps)">252.2</td><td data-label="Per-slot min. (Mbps)">0.0110</td><td data-label="Outage (%)">37.1</td></tr>
+<tr><th scope="row">Fixed penalty, λ = 1</th><td data-label="Throughput (Mbps)">228.1</td><td data-label="Per-slot min. (Mbps)">0.1541</td><td data-label="Outage (%)">8.5</td></tr>
+<tr><th scope="row">Greedy-SNR</th><td data-label="Throughput (Mbps)">206.7</td><td data-label="Per-slot min. (Mbps)">0.1579</td><td data-label="Outage (%)">9.1</td></tr>
+<tr><th scope="row">Proportional fair</th><td data-label="Throughput (Mbps)">213.6</td><td data-label="Per-slot min. (Mbps)">0.1562</td><td data-label="Outage (%)">8.3</td></tr>
+</tbody></table></div>
+<p class="result-note">Selected rows from Table I of the author manuscript, using held-out evaluation seeds; outage threshold: 0.1 Mbps. Rows are independently aggregated seed means. Better worst-user service comes with lower total throughput than unconstrained MAPPO. The method does not outperform a well-tuned fixed penalty at equal throughput.</p>
+
+</section>
+</article>
+<nav class="detail-next" aria-label="More projects"><a href="../#research">← Research</a><a href="rgb-thermal.html">RGB-thermal segmentation →</a></nav>
+</main>
+<footer><p>© 2026 Qindong Gan · <a href="mailto:ganqindong@fuji.waseda.jp">Contact</a></p></footer>
+</div>
+</body>
+</html>
