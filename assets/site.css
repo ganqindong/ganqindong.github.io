@@ -39,13 +39,17 @@ section{margin:0 0 50px;scroll-margin-top:28px}
 .publication h3{font-size:18px;line-height:1.4;max-width:810px;margin-bottom:6px}
 .publication .authors{font-size:15px;margin-bottom:4px}
 .publication .venue{font-size:15px;color:var(--muted);margin-bottom:8px}
+.publication-list{display:grid;gap:40px}
+.publication-entry h3 a{color:var(--ink);text-decoration:none}
+.publication-entry h3 a:hover,.publication-entry h3 a:focus-visible{text-decoration:underline}
+.publication-entry p:last-child{margin-bottom:0}
 .inline-links{display:flex;flex-wrap:wrap;gap:16px;font-size:16px}
 .project-list{display:grid;gap:40px}
 .project-row{display:grid;grid-template-columns:180px minmax(0,1fr);gap:28px;align-items:start}
-.project-thumb{display:flex;align-items:center;justify-content:center;height:140px;width:180px;overflow:hidden}
+.project-thumb{display:flex;align-items:center;justify-content:center;height:140px;width:180px;margin:0;overflow:hidden}
 .project-thumb img{width:100%;height:100%;object-fit:contain}
 .project-thumb.scene img{object-fit:cover}
-.project-thumb:hover{outline:2px solid var(--link);outline-offset:4px}
+a.project-thumb:hover{outline:2px solid var(--link);outline-offset:4px}
 .project-row h3 a{color:var(--ink)}
 .project-row p{font-size:16px;line-height:1.6;margin-bottom:8px}
 .project-row .meta{font-size:15px;color:var(--muted);margin-bottom:7px}
@@ -57,6 +61,7 @@ section{margin:0 0 50px;scroll-margin-top:28px}
 .education-item .date{font-size:15px;color:var(--muted);white-space:nowrap}
 .education-item p{grid-column:1/-1;font-size:16px;color:var(--muted);margin:0}
 .education-item .education-context{font-size:14px}
+.education-item .coursework{margin-top:5px;line-height:1.65}
 .education-links{margin-top:19px}
 .materials-note{font-size:14px;color:var(--muted);line-height:1.55;margin:7px 0 0}
 .english-scores{padding-left:24px;border-left:1px solid var(--rule)}
@@ -64,6 +69,9 @@ section{margin:0 0 50px;scroll-margin-top:28px}
 .test-total{font-size:16px;margin:0 0 2px}
 .test-total strong{margin-left:8px;font-weight:600}
 .test-speaking{font-size:15px;margin:4px 0 6px}
+.test-sections{margin:7px 0 10px;font-size:15px;line-height:1.7}
+.test-sections div{display:grid;grid-template-columns:1fr auto;gap:14px}
+.test-sections dt,.test-sections dd{margin:0}
 .test-date{font-size:14px;color:var(--muted);margin:0}
 .activity-list{display:grid;gap:22px}
 .activity-item h3{font-size:16px;margin-bottom:5px;font-weight:600}
@@ -143,6 +151,8 @@ footer a{color:var(--link)}
   .page{padding:0 22px}
   .site-nav{padding:21px 0 17px;gap:12px;font-size:14px}
   .nav-links{gap:16px}
+  .home-page .site-nav{align-items:flex-start}
+  .home-page .nav-links{display:grid;grid-template-columns:repeat(2,max-content);gap:3px 12px;text-align:right}
   .intro{grid-template-columns:1fr 111px;gap:8px 19px;padding-top:26px;padding-bottom:35px}
   .intro-copy{display:contents}
   .intro-identity{grid-column:1;grid-row:1;margin-bottom:0;align-self:center}
@@ -157,6 +167,7 @@ footer a{color:var(--link)}
   section{margin-bottom:37px}
   .publication .authors,.publication .venue{font-size:15px}
   .project-list{gap:30px}
+  .publication-list{gap:30px}
   .project-row{grid-template-columns:105px minmax(0,1fr);gap:14px 17px}
   .project-row>div{display:contents}
   .project-row .project-thumb{grid-column:1;grid-row:1}
@@ -209,8 +220,6 @@ footer a{color:var(--link)}
 @media(max-width:380px){
   .site-nav{gap:8px}
   .nav-links{gap:8px;flex-wrap:nowrap}
-  .publication h3{grid-column:1/-1;grid-row:1}
-  .publication .project-thumb{grid-column:1/-1;grid-row:2;width:100%;height:160px;margin-top:0}
 }
 
 /* Robot capstone media */

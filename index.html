@@ -15,15 +15,15 @@
 <meta property="og:image:alt" content="Qindong Gan at graduation">
 <meta property="og:image:width" content="846">
 <meta property="og:image:height" content="794">
-<link rel="stylesheet" href="assets/site.css?v=20261008-intro">
+<link rel="stylesheet" href="assets/site.css?v=20261010-publication-images">
 <!-- Original template attribution and license: THIRD_PARTY_NOTICES.md -->
 </head>
-<body>
+<body class="home-page">
 <a class="skip-link" href="#about">Skip to content</a>
 <div class="page">
 <nav class="site-nav" aria-label="Main navigation">
 <a class="home-link" href="./">Qindong Gan</a>
-<div class="nav-links"><a href="#education">Education</a><a href="#research">Research</a><a href="Qindong_Gan_CV.pdf">CV</a></div>
+<div class="nav-links"><a href="#education">Education</a><a href="#publications">Publications</a><a href="#research">Research</a><a href="Qindong_Gan_CV.pdf">CV</a></div>
 </nav>
 <main>
 <header class="intro" id="about">
@@ -35,7 +35,7 @@
 </div>
 <div class="bio">
 <p>I study multi-agent reinforcement learning, with a focus on decentralized decision-making and reliable policy evaluation. I am advised by Prof. <a href="https://www.shimamotolab.sci.waseda.ac.jp/shigeru-shimamoto/">Shigeru Shimamoto</a>. My recent work examines whether constraint feedback shapes policy learning.</p>
-<p class="availability">I am applying to U.S. PhD programs for Fall 2027.</p>
+<p class="availability">I am seeking PhD opportunities in the U.S. for Fall 2027.</p>
 </div>
 </div>
 <div class="portrait"><img src="profile-photo.webp" alt="Qindong Gan at graduation" width="846" height="794"></div>
@@ -45,28 +45,51 @@
 <div class="education-grid">
 <div>
 <div class="education-list">
-<div class="education-item"><h3>Waseda University</h3><span class="date">2025–2027 (expected)</span><p>M.Eng. in Computer Science and Communications Engineering</p></div>
-<div class="education-item"><h3>University of Cincinnati &amp; Chongqing University</h3><span class="date">2020–2025</span><p>B.S. in Electrical Engineering (UC)<br>B.Eng. in Electrical Engineering and Automation (CQU)</p><p class="education-context">Joint undergraduate program; final year at UC, 2024–2025.</p></div>
+<div class="education-item"><h3>Waseda University</h3><span class="date">2025–2027 (expected)</span><p>M.Eng. in Computer Science and Communications Engineering</p><p class="coursework"><strong>Selected coursework:</strong> Numerical Analysis for Computer Science Researchers (A+), Software Quality Assurance (A+), Advanced Wireless Access (A+).</p></div>
+<div class="education-item"><h3>University of Cincinnati &amp; Chongqing University</h3><span class="date">2020–2025</span><p>B.S. in Electrical Engineering (UC)<br>B.Eng. in Electrical Engineering and Automation (CQU)</p><p class="education-context">Joint undergraduate program; final year at UC, 2024–2025.</p><p class="coursework"><strong>Selected coursework at UC:</strong> Introduction to Applied AI &amp; ML Tools (A), Data Structures and Algorithms (A), Digital Image Processing (A).</p><p class="coursework"><strong>Selected coursework at CQU:</strong> Data Structures and Algorithms (92/100), Probability and Statistics (90/100), Embedded Systems (90/100).</p></div>
 </div>
-<nav class="education-links inline-links" aria-label="Application materials"><a href="materials/Qindong_Gan_Transcripts.pdf" title="Public copy with personal identifiers removed" aria-label="Download public transcripts with personal identifiers removed">Transcripts (PDF)</a></nav>
 </div>
 <aside class="english-scores" aria-labelledby="english-title">
 <h3 id="english-title">English scores</h3>
-<p class="test-total">TOEFL iBT <strong>95 / 120</strong></p>
-<p class="test-speaking">Speaking: 23 / 30</p>
-<p class="test-date">January 18, 2025</p>
+<p class="test-total">TOEFL iBT: <strong>95/120</strong> (ETS band comparison: 5.0/6)</p>
+<dl class="test-sections">
+<div><dt>Speaking</dt><dd>23 / 30</dd></div>
+<div><dt>Reading</dt><dd>29 / 30</dd></div>
+<div><dt>Listening</dt><dd>23 / 30</dd></div>
+<div><dt>Writing</dt><dd>20 / 30</dd></div>
+</dl>
 </aside>
+</div>
+</section>
+<section id="publications" aria-labelledby="publications-title">
+<h2 id="publications-title">Publications</h2>
+<div class="publication-list">
+<article class="publication publication-entry project-row">
+<a class="project-thumb" href="projects/constraint-feedback.html" aria-label="View the CCNC constraint feedback paper project"><img src="assets/projects/ccnc-system.png" loading="lazy" alt="Satellite, aerial, and ground access links in the SAGIN simulation" width="720" height="450"></a>
+<div>
+<h3><a href="projects/constraint-feedback.html">Causally Verified QoS-Floor Constraints for Decentralized SAGIN Access Association</a></h3>
+<p class="authors"><strong>Qindong Gan</strong>, Zhenni Pan, Tu Dac Ho, Jun Wu, and Shigeru Shimamoto</p>
+<p class="venue">IEEE CCNC 2027 · Accepted for presentation and publication</p>
+</div>
+</article>
+<article class="publication publication-entry project-row">
+<figure class="project-thumb"><img src="assets/projects/shinsaevolve-lunarlander.png" loading="lazy" alt="LunarLander environment from an archived ShinsaEvolve audit replay" width="400" height="267"></figure>
+<div>
+<h3>When Self-Reported Fitness Becomes the Target: Independent Audits in LLM-Driven Recipe Evolution</h3>
+<p class="authors"><strong>Qindong Gan</strong></p>
+<p class="venue">ShinsaEvolve · Submitted to Swarm and Evolutionary Computation (SWEVO).<br>Manuscript available upon request.</p>
+</div>
+</article>
 </div>
 </section>
 <section id="research" aria-labelledby="research-title">
 <h2 id="research-title">Research</h2>
 <div class="project-list">
-<article class="publication project-row" id="ccnc-project">
+<article class="project-row" id="ccnc-project">
 <a class="project-thumb" href="projects/constraint-feedback.html" aria-label="View the constraint feedback project"><img src="assets/projects/ccnc-system.png" alt="Satellite, aerial, and ground access links in the SAGIN simulation" width="720" height="450"></a>
 <div>
-<h3 id="publications"><a href="projects/constraint-feedback.html">Causally Verified QoS-Floor Constraints for Decentralized SAGIN Access Association</a></h3>
-<p class="authors"><strong>Qindong Gan</strong>, Zhenni Pan, Tu Dac Ho, Jun Wu, and Shigeru Shimamoto</p>
-<p class="venue">Conference paper · IEEE CCNC 2027 · Accepted for presentation and publication</p>
+<h3><a href="projects/constraint-feedback.html">Causally Verified QoS-Floor Constraints for Decentralized SAGIN Access Association</a></h3>
+<p class="meta">Waseda University · IEEE CCNC 2027</p>
 <p>I test whether constraint feedback changes multi-agent learning and study the trade-off between worst-user service and throughput.</p>
 </div>
 </article>
@@ -79,10 +102,10 @@
 </div>
 </article>
 <article class="project-row" id="robot-project">
-<a class="project-thumb scene" href="projects/robot-mapping.html" aria-label="View the bio-inspired robot mapping project"><img src="assets/projects/robot-cross-arena.png" loading="lazy" alt="Webots arena with colored landmarks and a central obstacle used in the capstone evaluation" width="800" height="639"></a>
+<a class="project-thumb scene" href="projects/robot-mapping.html" aria-label="View the bio-inspired robot mapping project"><img src="assets/projects/robot-cross-arena.png" loading="lazy" alt="Webots arena with colored landmarks and a central obstacle used in the senior design evaluation" width="800" height="639"></a>
 <div>
 <h3><a href="projects/robot-mapping.html">Bio-inspired mapping and navigation</a></h3>
-<p class="meta">Senior capstone project · University of Cincinnati · 2024–2025</p>
+<p class="meta">Senior design project · University of Cincinnati · 2024–2025</p>
 <p>I worked on visual feature extraction and evaluation for a camera–LiDAR extension of a hippocampus-inspired navigation framework.</p>
 </div>
 </article>
@@ -92,6 +115,7 @@
 <h2 id="teaching-title">Teaching Experience</h2>
 <article class="activity-item">
 <h3>Teaching Assistant, University of Cincinnati · 2024–2025</h3>
+<p><strong>Courses:</strong> Foundations of Engineering Design Thinking I &amp; II (ENED 1100 / ENED 1120).</p>
 <p>Supported engineering recitations and labs in English and graded assignments and exams.</p>
 </article>
 </section>
@@ -114,7 +138,7 @@
 </div>
 </section>
 </main>
-<footer><p>© 2026 Qindong Gan · Updated October 8, 2026</p></footer>
+<footer><p>© 2026 Qindong Gan · Updated October 10, 2026</p></footer>
 </div>
 </body>
 </html>
